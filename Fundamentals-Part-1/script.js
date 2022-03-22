@@ -95,7 +95,7 @@ console.log(ageJonas, ageSarah, averageAge);
 
 TEST DATA 1 : Marks weights 78 kg and is 1.69 m tall.
 John weights 92 kg and is 1.95 m tall.
-*/
+
 
 const marksMassD1 = 78;
 const marksHeightD1 = 1.69;
@@ -109,8 +109,8 @@ console.log(marksBmiD1, johnBmiD1);
 let markHigherBMI = marksBmiD1 > johnBmiD1;
 console.log(markHigherBMI);
 
-/*TEST DATA 2 : Marks weights 95 kg and is 1.88 m tall.
-John weights 85 kg and is 1.76 m tall. */
+TEST DATA 2 : Marks weights 95 kg and is 1.88 m tall.
+John weights 85 kg and is 1.76 m tall. 
 
 marksMassD2 = 95;
 marksHeightD2 = 1.88;
@@ -121,3 +121,70 @@ johnBmiD2 = johnMassD2 / (johnHeightD2 * johnHeightD2);
 console.log(marksBmiD2, johnBmiD2);
 markHigherBMI = marksBmiD2 > johnBmiD2;
 console.log(markHigherBMI);
+
+
+// Strings and Template Literals
+
+const firstName = "Munjeong";
+const job = "programmer";
+const birthYear = 1996;
+const year = 2022;
+
+const munjeong =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(munjeong);
+
+const munjeongNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(munjeongNew);
+
+console.log(`Just a regular string...`);
+
+console.log("String with \n\
+multiple \n\
+lines");
+
+console.log(`Strings
+multiple
+lines`);
+
+
+// if / else Statements
+
+const age = 15;
+
+if (age >= 18) {
+  console.log("Sarah can start driving license 🚗");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait until ${yearsLeft} years :)`);
+}
+
+const birthYear = 1996;
+
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
+*/
+
+// Challenge #2
+const marksMass = 95;
+const marksHeight = 1.88;
+const johnMass = 85;
+const johnHeight = 1.76;
+
+const marksBmi = marksMass / marksHeight ** 2;
+const johnBmi = johnMass / (johnHeight * johnHeight);
+
+console.log(marksBmi, johnBmi);
+let markHigherBMI = marksBmi > johnBmi;
+console.log(markHigherBMI);
+
+if (marksBmi > johnBmi) {
+  console.log(`Marks BMI(${marksBmi}) is higher than John's(${johnBmi})!`);
+} else {
+  console.log(`John's BMI(${johnBmi}) is higher than Marks(${marksBmi})`);
+}
