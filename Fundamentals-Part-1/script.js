@@ -83,10 +83,10 @@ console.log(x, y); // 10, 10
 
 const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
-*/
+
 
 // Coding Challenge #1
-/* BMI = mass / height ** 2 = mass / (height * height).
+ BMI = mass / height ** 2 = mass / (height * height).
 (mass in kg and height in meter)
 
 1. Store Marks's and John's mass and height in variables
@@ -94,7 +94,7 @@ console.log(ageJonas, ageSarah, averageAge);
 3. CReate a boolean variable 'markHigherBMI' containing information about whether Mark has a higher BMI than John.
 
 TEST DATA 1 : Marks weights 78 kg and is 1.69 m tall.
-John weights 92 kg and is 1.95 m tall.
+John weights 92 kg and is 1.95 m tall. 
 
 
 const marksMassD1 = 78;
@@ -168,7 +168,7 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
-*/
+
 
 // Challenge #2
 const marksMass = 95;
@@ -187,4 +187,104 @@ if (marksBmi > johnBmi) {
   console.log(`Marks BMI(${marksBmi}) is higher than John's(${johnBmi})!`);
 } else {
   console.log(`John's BMI(${johnBmi}) is higher than Marks(${marksBmi})`);
+} 
+
+// Type Conversion
+
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Munjeong")); //NaN(Not a Number)
+console.log(typeof NaN); //number
+
+console.log(String(23), 23);
+
+// Type Coercion
+console.log("I am " + 26 + " years old");
+console.log("26" - "10" - 3); // :13, minus operatorw triggered opposite conversion
+console.log("26" + "10" + 3); // :26103
+console.log("23" * "2");
+console.log("23" / "2");
+
+let n = "1" + 1; // '11'
+n = n - 1; // '10'
+console.log(n); 
+
+// 5 falsy values: 0, '', undefined, null, NaN // Everything else: truthy value
+
+const money = 0;
+if (money) {
+  console.log("Don't spend it all");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 0; // trigger bug
+if (height) {
+  console.log("YAY! Height is defined");
+} else {
+  console.log("Height is UNDEFINED");
+} 
+
+// Equaility Operators
+const age = 18;
+if (age === 18) console.log("You just became an adult :D (strict)");
+
+if (age == 18) console.log("You just became an adult :D (loose)");
+
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite === 23) {
+  // 22 === 23 -> false
+  console.log("Cool! 23 is an amazing number!");
+} else if (favorite === 7) {
+  console.log("7 is also a cool number");
+} else if (favorite === 9) {
+  console.log("9 is also a cool number");
+} else {
+  console.log("Number is not 23 or 7 or 9");
+}
+
+if (favorite !== 23) console.log("Why not 23?");
+
+
+// Boolean Logic
+
+const age = 16;
+const a = age >= 20;
+const b = age < 30;
+console.log(a);
+console.log(b);
+/* !a : true
+ a and b: false
+ a or b: true
+ !a and b: true
+a or !b: false */
+
+// Logical Operators
+
+const hasDriversLivense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLivense && hasGoodVision);
+console.log(hasDriversLivense || hasGoodVision);
+console.log(!hasDriversLivense);
+
+const shouldDrive = hasDriversLivense && hasGoodVision;
+
+//if (shouldDrive) {
+//  console.log("Sarah is able to drive!");
+//} else {
+//  console.log("Someone else should drive...//");}
+
+const isTired = false; // C
+console.log(hasDriversLivense && hasGoodVision && isTired);
+
+if (hasDriversLivense && hasGoodVision && !isTired) {
+  console.log("Sarah is able to drive!");
+} else {
+  console.log("Someone else should drive...");
 }
