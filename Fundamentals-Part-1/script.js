@@ -311,7 +311,7 @@ if (scoreDolphins > scoreKoalas) {
   console.log("The game ended in a draw.");
 } else {
   console.log("Koalas win the trophy 🏆!");
-} */
+} 
 
 // BONUS는 스스로 해결 못 했다.
 const scoreDolphins = (97 + 112 + 81) / 3;
@@ -330,4 +330,47 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
   console.log("Koalas win the trophy 🏆!");
 } else {
   console.log("No one wins the trophy 🙁");
+} */
+
+// The switch Statement
+
+const day = "monday";
+
+switch (day) {
+  case "monday": // day === 'monday'
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+
+// 위에 친 걸 if/else로 써보기
+if (day === monday) {
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");
+} else if (day === tuesday) {
+  console.log("Prepare theory videos");
+} else if (day === wendesday || day === thursday) {
+  console.log("Write code examples");
+} else if (day === friday) {
+  console.log("Record videos");
+} else if (day === saturday || day === sunday) {
+  console.log("Enjot the weekend :D");
+} else {
+  console.log("Not a valid day!");
 }
