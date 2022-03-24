@@ -258,14 +258,14 @@ const a = age >= 20;
 const b = age < 30;
 console.log(a);
 console.log(b);
-/* !a : true
- a and b: false
- a or b: true
- !a and b: true
-a or !b: false */
+//!a : true
+//a and b: false
+//a or b: true
+//!a and b: true
+//a or !b: false 
 
 // Logical Operators
-/*
+
 const hasDriversLivense = true; // A
 const hasGoodVision = true; // B
 
@@ -288,10 +288,10 @@ if (hasDriversLivense && hasGoodVision && !isTired) {
 } else {
   console.log("Someone else should drive...");
 }
-*/
+
 
 // Challenge #3
-/*
+
 There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins the trophy!
 
 1. Calculate the average score for each team, using the test data below
@@ -330,7 +330,7 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
   console.log("Koalas win the trophy 🏆!");
 } else {
   console.log("No one wins the trophy 🙁");
-} */
+} 
 
 // The switch Statement
 
@@ -373,4 +373,69 @@ if (day === monday) {
   console.log("Enjot the weekend :D");
 } else {
   console.log("Not a valid day!");
+} 
+
+// Statements and Expressions
+
+3 + 4;
+1991;
+true && false && !false;
+
+if (23 > 10) {
+  const str = "23 is bigger";
 }
+
+const me = "Munjeong";
+console.log(`I'm ${2022 - 1996} years old ${me}`); 
+
+// The Conditional(Ternary) Operator
+
+const age = 23;
+// age >= 18 ? console.log("I like to drink wine 🍷") : console.log("I like to drink water 💧");
+
+const drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+  drink2 = "wine 🍷";
+} else {
+  drink2 = "water 💧";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`); */
+
+// Challenge #4
+
+/* Steven wants to build a very simple tip calculator for whenever he goes eating in a restausrant. In his country, it's usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+1. Your task is to calculate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement 😅 (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
+
+2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: 'The bill was 275, the tip was 41.25, and the total value 316.25'
+
+TEST DATA: Test for bill values 275, 40 and 430 */
+
+const bill1 = 275;
+const tip1 = bill1 <= 300 && bill1 >= 50 ? bill1 * 0.15 : bill1 * 0.2;
+console.log(
+  `The bill was ${bill1}, the tip was ${tip1}, and the total value ${
+    bill1 + tip1
+  }`
+);
+
+const bill2 = 40;
+const tip2 = bill2 <= 300 && bill2 >= 50 ? bill2 * 0.15 : bill2 * 0.2;
+console.log(
+  `The bill was ${bill2}, the tip was ${tip2}, and the total value ${
+    bill2 + tip2
+  }`
+);
+
+const bill3 = 430;
+const tip3 = bill3 <= 300 && bill3 >= 50 ? bill3 * 0.15 : bill3 * 0.2;
+console.log(
+  `The bill was ${bill3}, the tip was ${tip3}, and the total value ${
+    bill3 + tip3
+  }`
+);
