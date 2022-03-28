@@ -214,7 +214,7 @@ Steven is still building his tip calculator, using the same rules as before: Tip
 4. BONUS: Create an array 'total' containing the total values, so the bill + tip.
 
 TEST DATA: 125, 555 and 44
-*/
+
 
 const calcTip = function (bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
@@ -226,3 +226,146 @@ const bills = [125, 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, totals);
+
+
+// Objects
+const munjeongArray = [
+  "Munjeong",
+  "Choi",
+  2022 - 1996,
+  "web developer",
+  ["Heejin", "Hanna", "Shuhwa"],
+];
+
+const munjeong = {
+  firstName: "Munjeong",
+  lastName: "Choi",
+  age: 2022 - 1996,
+  job: "web developer",
+  friends: ["Heejin", "Hanna", "Shuhwa"],
+};
+
+// Dot vs. Bracket Notation
+
+console.log(munjeong);
+
+console.log(munjeong.lastName);
+console.log(munjeong["lastName"]);
+
+const nameKey = "Name";
+console.log(munjeong["first" + nameKey]);
+console.log(munjeong["last" + nameKey]);
+
+// console.log(munjeong."last" + nameKey]); < 이렇게는 안 된다
+
+const interestedIn = prompt(
+  "What do you want to know about Munjeong? Choose between firstName, lastName, age, job, and friends"
+);
+
+if (munjeong[interestedIn]) {
+  console.log(munjeong[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, job, and friends"
+  );
+}
+
+munjeong.location = "South Korea";
+munjeong["likes"] = "I-DLE";
+console.log(munjeong);
+
+// Challenge
+// "Munjeong has 5 friends, and his best friend is called Heejin"
+
+console.log(
+  `${munjeong.firstName} has ${munjeong.friends.length} friends, and her best friend is called ${munjeong.friends[0]}`
+);
+
+
+// Object Methods
+const munjeong = {
+  firstName: "Munjeong",
+  lastName: "Choi",
+  birthYear: 1996,
+  job: "web developer",
+  friends: ["Heejin", "Hanna", "Shuhwa"],
+  hasDriversLicense: false,
+
+  //calcAge: function (birthYear) {
+  //  return 2022 - birthYear;
+  //}
+
+  //calcAge: function () {
+  //  console.log(this);
+  //  return 2022 - this.birthYear;
+  // }
+
+  calcAge: function () {
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      munjeong.job
+    }, and she has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
+};
+
+console.log(munjeong.calcAge());
+
+console.log(munjeong.age);
+console.log(munjeong.age);
+console.log(munjeong.age);
+
+// Challenge
+// "Munjeong is a 26-year old web developer. and she has no driver's license"
+
+console.log(munjeong.getSummary());
+
+// Coding Challenge #3
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remever: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
+
+1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+2. Creat a 'calcBMI' method on each object to calculate the BMI ( the same method on both objects).
+Store the BMI value to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the respective BMI.
+Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+
+TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and 1.95 m tall.
+*/
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+mark.calcBMI();
+john.calcBMI();
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi < john.bmi) {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`
+  );
+} else if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi} is higher than ${john.fullName}'s(${john.bmi})!)`
+  );
+} else {
+  console.log("Draw");
+}
