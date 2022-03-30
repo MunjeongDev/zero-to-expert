@@ -333,7 +333,7 @@ Store the BMI value to a property, and also return it from the method.
 Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
 
 TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and 1.95 m tall.
-*/
+
 
 const mark = {
   fullName: "Mark Miller",
@@ -368,4 +368,155 @@ if (mark.bmi < john.bmi) {
   );
 } else {
   console.log("Draw");
+} 
+
+// Iteration: The for Loop
+
+// console.log("Lifting weights repetition 1 🏋🏻‍♀️");
+// console.log("Lifting weights repetition 2 🏋🏻‍♀️");
+// console.log("Lifting weights repetition 3 🏋🏻‍♀️");
+// console.log("Lifting weights repetition 4 🏋🏻‍♀️");
+// console.log("Lifting weights repetition 5 🏋🏻‍♀️");
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 5; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋🏻‍♀️`);
 }
+
+
+// Looping Arrays, Breaking and Continuing
+
+const munjeong = [
+  "Munjeong",
+  "Choi",
+  2022 - 1996,
+  "web developer",
+  ["Heejin", "Hanna", "Shuhwa"],
+];
+const types = [];
+
+for (let i = 0; i < munjeong.length; i++) {
+  // Reading from jonas array
+  console.log(munjeong[i], typeof munjeong[i]);
+
+  // filling types array
+  // types[i] = typeof munjeong[i];
+  types.push(typeof munjeong[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2022 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log("--- ONLY STRINGS ---");
+
+for (let i = 0; i < munjeong.length; i++) {
+  if (typeof munjeong[i] !== "string") continue;
+
+  console.log(munjeong[i], typeof munjeong[i]);
+}
+
+console.log("--- BREAK WITH NUMBER ---");
+
+for (let i = 0; i < munjeong.length; i++) {
+  if (typeof munjeong[i] === "number") break;
+
+  console.log(munjeong[i], typeof munjeong[i]);
+} 
+
+// Looping Backwards and Loops in Loops
+
+const munjeong = [
+  "Munjeong",
+  "Choi",
+  2022 - 1996,
+  "web developer",
+  ["Heejin", "Hanna", "Shuhwa"],
+];
+
+// 0,1, ...,4
+// 4, 3, ..., 0
+
+for (let i = munjeong.length - 1; i >= 0; i--) {
+  console.log(i, munjeong[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`------Starting exercise ${exercise}`);
+
+  for (rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋🏻‍♀️`);
+  }
+}
+
+
+// The while Loop
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋🏻‍♀️`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`WHILE: Lifting weights repetition ${rep} 🏋🏻‍♀️`);
+  rep++;
+}
+// while loop is more versatile than for loop
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6 + 1);
+  if (dice === 6) {
+    console.log("Loop is about to end...");
+  }
+}
+
+// Coding Challenge #4
+Let's improve Steven's tip calculator even more, this time using loops!
+
+1. Create an array 'bills' containing all 10 test bill values 
+2. Create empty arrays for the tips and the totals('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+
+TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52
+
+HINT: Call calcTip in the loop and use the push method to add values to the tips and totals array 😉
+
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+console.log(bills, tips, totals);
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    // sum = sum + arr[i];
+  }
+  return sum / arr.length;
+};
+console.log(calcAverage([2, 3, 7]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+*/
